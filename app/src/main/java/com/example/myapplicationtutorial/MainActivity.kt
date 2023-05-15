@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     fun stopLoading() {
         binding.prgbar.visibility = View.GONE
     }
-    fun processLogin(data: LoginRequest.LoginResponse?) {
+    fun processLogin(data: LoginResponse?) {
         showToast("Success:" + data?.message)
         if (!data?.data?.token.isNullOrEmpty()) {
             data?.data?.token?.let { SessionManager.saveAuthToken(this,it) }
@@ -82,6 +82,7 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun showToast(msg: String) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()}
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
 }
         //setContentView(R.layout.activity_main)

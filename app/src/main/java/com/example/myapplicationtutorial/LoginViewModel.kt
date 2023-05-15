@@ -6,10 +6,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
+
 class LoginViewModel(application: Application) :
        AndroidViewModel(application) {
        val userRepo = UserRepository()
-       val loginResult: MutableLiveData<BaseResponse<LoginRequest.LoginResponse>> =
+       val loginResult: MutableLiveData<BaseResponse<LoginResponse>> =
               MutableLiveData()
 
        fun loginUser(email: String, pwd: String) {
